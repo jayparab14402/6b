@@ -1,0 +1,24 @@
+Georeferencing Aerial Imagery
+Install OpenLayers Plugin if it is not installed.
+Click on Plugins  OpenLayers plugin  Add OpenStreetMap Layer.
+In coordinate field at bottom of the screen enter (-8237364,4972720) and scale as 1:2500 
+and press enter. Also set CRS value as EPSG:3857.
+Click on Raster  Georeferencer  Georeferencer.
+On georeferencer window click on File  Open raster open 6b.
+Set CRS as EPSG:3857 and click on OK.
+Click on Add point icon.
+Mouse pointer is changed into plus sign, now click at any location on image a pop-up asking us to
+ enter map coordinates. Click the button “From map canvas” and select appropriate point form streetmap 
+(Refer below images for selecting 4 corresponding points on Aerial image and Streetmap from main QGIS window).
+After selecting at least 4 points click on Settings  Transformation settings.
+In the Transformation settings dialog, choose the Transformation type as “Thin Plate Spline”. Select location
+ and name for output raster. Choose EPSG:3857 as the target SRS. Make sure the Load in QGIS when done option is
+ checked. CLick OK.
+On Georeferencer window, go to File  Start georeferencing.
+The layer is added to main GIS window.
+Open property window of newly added layer (double click on it from layer pane).
+Click on Transparency tab. We want to indicate that any black or white pixels in the image are no-data values and
+ should be made transparent. Input “0” as the No data value. Also, in the Custom transparency options, click on the
+ “+“ button and add 255 as the transparent pixels for each band and enter 100 as the Percent transparent. Click OK. 
+It require we can change global transparency also.
+Now we will see our georeferenced image nicely overlaid on the base layer.
